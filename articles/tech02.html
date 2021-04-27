@@ -1,0 +1,1108 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Welcome | l7ui.github.io</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/noscript.css"/>
+    </noscript>
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <a href="../index.html" class="logo">L7ui</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="nav">
+        <ul class="links">
+            <li class="active"><a href="../index.html">Main</a></li>
+            <li><a href="../debug.html">Debug</a></li>
+        </ul>
+        <ul class="icons">
+            <li><a href="https://github.com/l7ui" class="icon brands fa-github"><span class="label">GitHub</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Post -->
+        <section class="post">
+            <header class="major">
+                <span class="date">April 27, 2021</span>
+                <h1>[Tech]:Linux</h1>
+                <p>Linux常用指令，转自：<a href="https://github.com/twtrubiks/linux-note">twtrubiks/linux-note</a></p>
+            </header>
+            <body>
+            <p>主要是紀錄一些 linux 的指令📝</p>
+            <p>( 本篇文章會持續更新😄 )</p>
+            <h2>cd</h2>
+            <p>切換到家目錄 <code>~</code></p>
+            <pre><code class='language-cmd' lang='cmd'>cd ~
+</code></pre>
+            <p>切換到根目錄 <code>/</code></p>
+            <pre><code class='language-cmd' lang='cmd'>cd /
+</code></pre>
+            <p>回到上層目錄</p>
+            <pre><code class='language-cmd' lang='cmd'>cd ..
+</code></pre>
+            <h2>man</h2>
+            <p>線上說明手冊 ( man page )</p>
+            <pre><code class='language-cmd' lang='cmd'>man ls
+</code></pre>
+            <p><img src="https://i.imgur.com/3DDi208.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>也可以使用</p>
+            <pre><code class='language-cmd' lang='cmd'>ls --help
+</code></pre>
+            <p><img src="https://i.imgur.com/ZSZjuVC.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <h2>pwd</h2>
+            <p>查看目前的路徑</p>
+            <pre><code class='language-cmd' lang='cmd'>pwd
+</code></pre>
+            <h2>ls</h2>
+            <p><a href='https://youtu.be/3Zy1AWuDUHE'>Youtube Tutorial - Linux 指令教學 - ls</a></p>
+            <p>列出檔案</p>
+            <pre><code class='language-cmd' lang='cmd'>ls -l
+</code></pre>
+            <p><code>-l</code> 顯示詳細的資訊 ( 檔案權限 )。</p>
+            <p>也等於直接輸入 (L 的小寫)</p>
+            <pre><code class='language-cmd' lang='cmd'>ll
+</code></pre>
+            <p>在 Linux 中，檔案都擁有四種權限</p>
+            <ul>
+                <li>可讀取 ( r，Readable )，用數字 4 表示。</li>
+                <li>可寫入 ( w，writable )，用數字 2 表示。</li>
+                <li>可執行 ( x，eXecute )，用數字 1 表示。</li>
+                <li>無權限 ( - )，用數字 0 表示。</li>
+
+            </ul>
+            <p>為了更清楚，我把它整理成表格😋</p>
+            <figure>
+                <table>
+                    <thead>
+                    <tr>
+                        <th style='text-align:center;'>字元</th>
+                        <th style='text-align:center;'>權限分數</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style='text-align:center;'>r (read)</td>
+                        <td style='text-align:center;'>4</td>
+                    </tr>
+                    <tr>
+                        <td style='text-align:center;'>w (write)</td>
+                        <td style='text-align:center;'>2</td>
+                    </tr>
+                    <tr>
+                        <td style='text-align:center;'>x (execute)</td>
+                        <td style='text-align:center;'>1</td>
+                    </tr>
+                    <tr>
+                        <td style='text-align:center;'>- 無權限</td>
+                        <td style='text-align:center;'>0</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </figure>
+            <p>如下圖所示，</p>
+            <p><img src="https://i.imgur.com/AzfYBhf.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>接著說明裡面每一欄的意思，</p>
+            <p><img src="https://i.imgur.com/3TMcAtC.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <ul>
+                <li>第一欄 ( 圖上編號 1 )，使用者權限。</li>
+
+            </ul>
+            <p>由 10 個字元組成，</p>
+            <p>第一個字元代表檔案型態 (<code>-</code> 為檔案，<code>d</code> 為目錄，<code>l</code> 為連結檔案 )。</p>
+            <p>第二、三、四個字元 表示檔案擁有者的存取權限。</p>
+            <p>第五、六、七個字元 表示檔案擁有者所屬群組成員的存取權限。</p>
+            <p>第八、九、十個字元 表示其他使用者的存取權限。</p>
+            <p>來看一個例子，drwxr-xr-x，</p>
+            <p>代表它是一個目錄，</p>
+            <p>擁有者具備讀、寫、執行權限，</p>
+            <p>所屬群組只擁有讀、執行權限，</p>
+            <p>其他使用者只擁有讀、執行權限。</p>
+            <p>為了更清楚，我把它整理成表格😋</p>
+            <figure>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th style='text-align:center;'>擁有者</th>
+                        <th style='text-align:center;'>所屬群組</th>
+                        <th style='text-align:center;'>其他使用者</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>d</td>
+                        <td style='text-align:center;'>rwx</td>
+                        <td style='text-align:center;'>r-x</td>
+                        <td style='text-align:center;'>r-x</td>
+                    </tr>
+                    <tr>
+                        <td>代表是一個目錄</td>
+                        <td style='text-align:center;'>具備讀、寫、執行權限</td>
+                        <td style='text-align:center;'>只擁有讀、執行權限</td>
+                        <td style='text-align:center;'>只擁有讀、執行權限</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </figure>
+            <p>它的權限分數是 755</p>
+            <p>| 身份 | 權限 | 分數 |
+                |:------: |:----: |:--------: |
+                | owner | rwx | 4+2+1 =7 |
+                | group | r-x | 4+0+1 =5 |
+                | others | r-x | 4+0+1 =5 |</p>
+            <ul>
+                <li>第二欄 ( 圖上編號 2 )，檔案數量。</li>
+                <li>第三欄 ( 圖上編號 3 )，擁有者。</li>
+                <li>第四欄 ( 圖上編號 4 )，群組。</li>
+                <li>第五欄 ( 圖上編號 5 )，檔案大小。</li>
+                <li>第六欄 ( 圖上編號 6 )，檔案建立時間。</li>
+                <li>第七欄 ( 圖上編號 7 )，檔案名稱。</li>
+
+            </ul>
+            <p>ls 使用時間排序</p>
+            <pre><code class='language-cmd' lang='cmd'>ls -t
+</code></pre>
+            <p>列出特定檔案 ( 列出為 .py 的檔案 )</p>
+            <pre><code class='language-cmd' lang='cmd'>ls *.py
+</code></pre>
+            <p><code>-h</code> 參數，使用 KB、MB、GB 單位顯示檔案或目錄大小。</p>
+            <pre><code class='language-cmd' lang='cmd'>ls -l -h
+</code></pre>
+            <p>顯示全部的檔案 (包含隱藏檔)</p>
+            <pre><code class='language-cmd' lang='cmd'>ls -a
+</code></pre>
+            <p>也可以使用</p>
+            <pre><code class='language-cmd' lang='cmd'>ls -al
+</code></pre>
+            <p>可以直接列出資料夾內的內容</p>
+            <pre><code class='language-cmd' lang='cmd'>ls Downloads
+</code></pre>
+            <p>像是在 home 底下, 直接列出 Downloads 內容</p>
+            <p><img src="https://i.imgur.com/Dal7aSn.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>sort</p>
+            <pre><code class='language-cmd' lang='cmd'>ls -S
+</code></pre>
+            <p>將輸出結果寫到檔案裡</p>
+            <pre><code class='language-cmd' lang='cmd'>ls -lS &gt; file.txt
+</code></pre>
+            <h2>su</h2>
+            <p>切換不同的 user</p>
+            <pre><code class='language-cmd' lang='cmd'>su &lt;username&gt;
+</code></pre>
+            <h2>sudo</h2>
+            <p>增加新的 user</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo useradd &lt;username&gt;
+</code></pre>
+            <p>設定 user 的 password</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo passwd &lt;username&gt;
+</code></pre>
+            <p>刪除 user</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo userdel &lt;username&gt;
+</code></pre>
+            <p>增加新的 group</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo groupadd &lt;groupname&gt;
+</code></pre>
+            <p>刪除 group</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo groupdel &lt;groupname&gt;
+</code></pre>
+            <p>增加 user 到 group 中</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo usermod -g &lt;groupname&gt; &lt;username&gt;
+</code></pre>
+            <p>查看所有 user</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo cat /etc/passwd
+</code></pre>
+            <p>查看所有 group</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo cat /etc/group
+</code></pre>
+            <p>不知道大家有沒有這個困擾, 就是每次都要打上自己的密碼很麻煩😑</p>
+            <p>這邊提供一個方法給各位, 但還是要小心一點, 就是 <code>-S</code> 這個指令.</p>
+            <pre><code class='language-text' lang='text'>The -S (stdin) option causes sudo to read the password from
+the standard input instead of the terminal device.
+</code></pre>
+            <p>簡單說, 就是先打上你自己的密碼, 這樣就不用再打一次了, 以下舉例</p>
+            <pre><code class='language-cmd' lang='cmd'>echo YourPwd | sudo -S groupadd &lt;groupname&gt;
+</code></pre>
+            <h2>chmod</h2>
+            <p><a href='https://youtu.be/qwk4Pzgtf2I'>Youtube Tutorial - Linux 教學 - chmod</a></p>
+            <p>chmod 為 change mode 的縮寫.</p>
+            <p>改變檔案權限</p>
+            <pre><code class='language-cmd' lang='cmd'>chmod XXX filename
+</code></pre>
+            <p>舉個例子，將權限設為 rw-rw-r--，</p>
+            <p>| 身份 | 權限 | 分數 |
+                |:------: |:----: |:--------: |
+                | owner | rw- | 4+2+0 =6 |
+                | group | rw- | 4+2+0 =6 |
+                | others | r-- | 4+0+0 =4 |</p>
+            <pre><code class='language-cmd' lang='cmd'>chmod 664 README.md
+</code></pre>
+            <p>常用修改權限的指令</p>
+            <pre><code class='language-cmd' lang='cmd'># 只有擁有者 owner 有讀和寫的權限
+sudo chmod 600 ×××
+</code></pre>
+            <pre><code class='language-cmd' lang='cmd'># 擁有者 owner 有讀和寫的權限，group，others 只有讀的權限
+sudo chmod 644 ×××
+</code></pre>
+            <pre><code class='language-cmd' lang='cmd'># 擁有者 owner 有讀和寫以及執行的權限
+sudo chmod 700 ×××
+</code></pre>
+            <pre><code class='language-cmd' lang='cmd'># 擁有者 owner，group，others 都有讀和寫的權限
+sudo chmod 666 ×××
+</code></pre>
+            <pre><code class='language-cmd' lang='cmd'># 擁有者 owner，group，others 都有讀和寫以及執行的權限，基本上就是全開
+sudo chmod -R 777 xxx
+</code></pre>
+            <p><code>-r</code> <code>-R</code> 代表 recursive 遞迴 ( 目錄底下所以檔案包含子目錄都會變更 )，</p>
+            <p>還有一種方法是使用 符號 來改變權限，</p>
+            <p>在介紹之前，先看下方的表格 😉</p>
+            <figure>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>u = user</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>g = group</td>
+                        <td>+ (增加)</td>
+                        <td>r = read</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>chmod</td>
+                        <td>&nbsp;</td>
+                        <td>- (移除)</td>
+                        <td>w = write</td>
+                        <td>檔案或資料夾</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>o = other</td>
+                        <td>= (設定)</td>
+                        <td>x = execute</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>a = all</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </figure>
+            <p>舉個例子，將 hello 權限設為 rw-rw-r--，</p>
+            <p>| 擁有者(u) | 所屬群組(g) | 其他使用者(o) |
+                |:------: |:----: |:--------: |
+                | rw- | rw- | r-- |</p>
+            <pre><code class='language-cmd' lang='cmd'>chmod ug=rw,o=r hello
+</code></pre>
+            <p><img src="https://i.imgur.com/QgNuNel.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>再舉個例子，將 hello 權限設為 rwxr-xr–-，</p>
+            <pre><code class='language-cmd' lang='cmd'>chmod u=rwx,g=rx,o=r hello
+</code></pre>
+            <p><img src="https://i.imgur.com/WlX8wPL.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>接著假設我希望把 可執行的權限(x) 加上去 (全部人及群組都加上)</p>
+            <pre><code class='language-cmd' lang='cmd'>chmod a+x hello
+</code></pre>
+            <p><img src="https://i.imgur.com/KLiwPXX.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>移除所有人 可執行的權限(x)</p>
+            <pre><code class='language-cmd' lang='cmd'>chmod a-x hello
+</code></pre>
+            <p>你會發現大家的 可執行的權限(x) 都消失了</p>
+            <p><img src="https://i.imgur.com/O8gh3Is.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>相信經過這一連串的練習，大家肯定了解了，</p>
+            <p>如果不懂，多看幾遍😆</p>
+            <h2>chown</h2>
+            <p>修改檔案或目錄的擁有者與群組。</p>
+            <p>修改檔案或目錄的擁有者</p>
+            <pre><code class='language-cmd' lang='cmd'># 將 README.md ( 檔案 ) 的擁有者改為 twtrubiks ( 使用者 )
+chown twtrubiks README.md
+</code></pre>
+            <p>修改檔案或目錄的群組</p>
+            <pre><code class='language-cmd' lang='cmd'># 將 README.md ( 檔案 ) 的群組改為 twtrubiksgroup ( 群組 )
+chown :twtrubiksgroup README.md
+</code></pre>
+            <p>同時修改檔案或目錄的擁有者和群組</p>
+            <pre><code class='language-cmd' lang='cmd'># 將 README.md ( 檔案 ) 的擁有者改為 twtrubiks ( 使用者 ) 以及
+# 將 README.md ( 檔案 ) 的群組改為 twtrubiksgroup ( 群組 )
+chown twtrubiks:twtrubiksgroup README.md
+</code></pre>
+            <h2>ln</h2>
+            <p><a href='https://youtu.be/jdZsO2GAf2I'>Youtube Tutorial - Linux 指令教學 - ln (Symbolic Link)</a></p>
+            <p>有兩種, 分別為 hard link 和 Symbolic link ( soft link ),</p>
+            <p>先介紹 hard link，注意，hard link not allowed for directory。</p>
+            <pre><code class='language-cmd' lang='cmd'>ln /home/twtrubiks/Downloads/odoo-git/README.md
+</code></pre>
+            <p><img src="https://i.imgur.com/ioJXBRw.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>hard link 特性為不管刪除哪一個檔案，檔案都會被保留。除非你把最後一個檔案也刪除，</p>
+            <p>換個方式說，一個檔案的 hard link 和本來的檔案其實沒有任何實質上的區別。</p>
+            <p>hard link 不允許資料夾，只允許檔案。</p>
+            <p>symbolic link，也稱 soft link，基本上它類似於 Windows 中的捷徑😄</p>
+            <pre><code class='language-cmd' lang='cmd'>ln -s /home/twtrubiks/Downloads/odoo-git/ dir-link
+</code></pre>
+            <p><img src="https://i.imgur.com/JGhlQZd.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>當某個檔案的的本體被刪除後，它的 symbolic link 就無法讀取到這個檔案了，</p>
+            <p>一個檔案的 symbolic link 和檔案的本體是不同的兩個東西。</p>
+            <p>symbolic link 允許檔案和資料夾。</p>
+            <h2>zip unzip</h2>
+            <p>zip 3.0 已經會保存檔案的 permissions and ownership.</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo apt-get install zip unzip
+</code></pre>
+            <p>zip</p>
+            <pre><code class='language-cmd' lang='cmd'>zip -r &lt;壓縮後的檔名&gt; &lt;壓縮的檔案&gt;
+zip -r file.zip file
+</code></pre>
+            <p>unzip</p>
+            <pre><code class='language-cmd' lang='cmd'>unzip &lt;解壓縮的檔案&gt; -d &lt;解壓縮的目標資料夾&gt;
+unzip file.zip -d zip_extract
+</code></pre>
+            <p>如果希望直接解壓縮到當前的目錄，可以直接使用 <code>.</code></p>
+            <pre><code class='language-cmd' lang='cmd'>unzip file.zip -d .
+</code></pre>
+            <h2>tar</h2>
+            <p>tar <strong>會</strong>保存檔案的 permissions and ownership.</p>
+            <p>壓縮 <code>.tar</code> format</p>
+            <pre><code class='language-cmd' lang='cmd'>tar cvf filename.tar source-folder
+</code></pre>
+            <p>解壓縮 <code>.tar</code> format</p>
+            <pre><code class='language-cmd' lang='cmd'>tar xvf filename.tar
+</code></pre>
+            <h2>unrar</h2>
+            <pre><code class='language-cmd' lang='cmd'>sudo apt-get install unrar
+</code></pre>
+            <p>將 filename.rar 解壓縮到目錄底下</p>
+            <pre><code class='language-cmd' lang='cmd'>unrar e filename.rar
+</code></pre>
+            <p>列出 filename.rar 的資料</p>
+            <pre><code class='language-cmd' lang='cmd'>unrar l filename.rar
+</code></pre>
+            <p>測試 filename.rar 是否完整且正確</p>
+            <pre><code class='language-cmd' lang='cmd'>unrar t filename.rar
+</code></pre>
+            <h2>wget</h2>
+            <p>下載工具</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo apt-get install wget
+</code></pre>
+            <p>下載 URL 指令</p>
+            <pre><code class='language-cmd' lang='cmd'>wget http://ftp.gnu.org/gnu/wget/wget-1.20.3.tar.gz
+</code></pre>
+            <p>指定檔名，請加上 <code>-O</code></p>
+            <pre><code class='language-cmd' lang='cmd'>wget -O wget.tar.gz http://ftp.gnu.org/gnu/wget/wget-1.20.3.tar.gz
+</code></pre>
+            <h2>scp</h2>
+            <p>全名為 Securely Copy,</p>
+            <p>這個方法適用於 Linux 和 Linux 之間互傳檔案，也適用於 Linux 和 Windows 之間互傳檔案，</p>
+            <p>假設，Linux ip 為 192.168.56.101，查看 ip 指令如下，</p>
+            <pre><code class='language-cmd' lang='cmd'>ip addr show
+</code></pre>
+            <p><img src="https://i.imgur.com/AlAeRoD.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>確認有安裝 openssh-server</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo apt-get install openssh-server
+</code></pre>
+            <p>使用 <code>ssh localhsot</code> 測試</p>
+            <p><img src="https://i.imgur.com/nYo5NNn.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>一切正常之後。</p>
+            <p>從 Windows 上傳送檔案給 Linux ( ip 為 192.168.56.101 )，</p>
+            <p>在 Windows 上的 cmd 執行以下指令，</p>
+            <pre><code class='language-cmd' lang='cmd'>scp -rp 檔案 linux的使用者@ip:目標路徑
+</code></pre>
+            <p><code>-r</code> 代表 recursive.</p>
+            <p><code>-p</code> 代表 保存原始檔案的內容 (Preserves modification).</p>
+            <pre><code class='language-cmd' lang='cmd'>scp -rp file twtrubiks@192.168.56.101:/home/twtrubiks
+</code></pre>
+            <p><img src="https://i.imgur.com/0nBrt00.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>接下來，從 Linux 上拿檔案回 Windows</p>
+            <pre><code class='language-cmd' lang='cmd'>scp -P 22 linux的使用者@ip:目標路徑 存放的目標位置
+</code></pre>
+            <p><code>-P</code> 代表明確指定連接的 port (remote host).</p>
+            <pre><code class='language-cmd' lang='cmd'>scp -P 22 twtrubiks@192.168.56.101:/home/twtrubiks/linux_file.md .
+</code></pre>
+            <p><code>.</code> 代表當下目前路徑 ( 也可以指定其他的路徑 )。</p>
+            <p><img src="https://i.imgur.com/aMnNlGI.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>Linux 之間的傳送也是相同的道理😄</p>
+            <h2>mv</h2>
+            <p><a href='https://youtu.be/VhyzaEaGnL8'>Youtube Tutorial - Linux 指令教學 - mv</a></p>
+            <p>move ( rename ) files，<strong>移動檔案</strong>或是<strong>重新命名檔案</strong>。</p>
+            <p>修改 資料夾 or 檔案 檔名</p>
+            <pre><code class='language-cmd' lang='cmd'>mv folder folder-new
+mv README.md README_MV.md
+</code></pre>
+            <p>移動檔案</p>
+            <pre><code class='language-cmd' lang='cmd'>mv README.md /examples
+</code></pre>
+            <pre><code class='language-cmd' lang='cmd'>mv file.md example/
+</code></pre>
+            <p>其他的參數說明(參數可以多個一起使用)，</p>
+            <p>互動模式 , CLI 會詢問你是否 overwriting files</p>
+            <pre><code class='language-cmd' lang='cmd'>mv -i source_file path_to_destination/
+</code></pre>
+            <p>只更新來源資料夾和目的地不同的檔案</p>
+            <pre><code class='language-cmd' lang='cmd'>mv -u source_file path_to_destination/
+</code></pre>
+            <h2>rm</h2>
+            <p><a href='https://youtu.be/JqKjBZMXn_I'>Youtube Tutorial - Linux 指令教學 - rm</a></p>
+            <p>刪除檔案</p>
+            <pre><code class='language-cmd' lang='cmd'>rm file.md
+</code></pre>
+            <p>刪除資料夾</p>
+            <pre><code class='language-cmd' lang='cmd'>rm -rf mydir
+</code></pre>
+            <p><code>-r</code> 代表使用 recursive 遞迴刪除。 ( 會將目錄內所有檔案刪除 )</p>
+            <p><code>-f</code> 代表強制刪除 ( 不會跳出警告 )。</p>
+            <p>或是使用 rmdir 指令，</p>
+            <pre><code class='language-cmd' lang='cmd'>rmdir mydir_name
+</code></pre>
+            <p>不過要注意，被移除的資料夾裡面必須是空的，否則回無法移除。</p>
+            <p>刪除特定的副檔名，</p>
+            <pre><code class='language-cmd' lang='cmd'>rm -f *.zip
+</code></pre>
+            <p>也可以這樣</p>
+            <pre><code class='language-cmd' lang='cmd'>rm -f *demo.zip
+</code></pre>
+            <h2>cp</h2>
+            <p><a href='https://youtu.be/ORl0YUGY728'>Youtube Tutorial - Linux 指令教學 - cp</a></p>
+            <p>複製資料夾</p>
+            <pre><code class='language-cmd' lang='cmd'>cp -r path_to_source/ path_to_destination/
+</code></pre>
+            <p><code>-r</code> <code>-R</code> 代表 recursive 遞迴，</p>
+            <p>如果 path_to_destination 不存在，會自動建立 ;</p>
+            <p>如果存在，則直接使用。</p>
+            <p>只想複製資料夾底下的全部內容，</p>
+            <pre><code class='language-cmd' lang='cmd'>cp -r dir_1/. dir_2
+cp -r dir_1/. .
+</code></pre>
+            <p><code>.</code> 代表資料夾內的東西，也可以代表目前所在的地方。</p>
+            <p>有時候會希望複製時可以保存當時的權限，所以會加上 <code>-p</code>。</p>
+            <pre><code class='language-cmd' lang='cmd'>cp -r --preserve=all path_to_source/ path_to_destination/
+</code></pre>
+            <p><code>-p</code> <code>--preserve</code> 代表一同複製當下的權限以及擁有者之類的。</p>
+            <p>其他的參數說明(參數可以多個一起使用)，</p>
+            <p>互動模式 , CLI 會詢問你是否 overwriting files</p>
+            <pre><code class='language-cmd' lang='cmd'>cp -i source_file path_to_destination/
+</code></pre>
+            <p>不詢問 , 直接 overwriting files</p>
+            <pre><code class='language-cmd' lang='cmd'>cp -n source_file path_to_destination/
+</code></pre>
+            <p>只更新來源資料夾和目的地不同的檔案</p>
+            <pre><code class='language-cmd' lang='cmd'>cp -u source_file path_to_destination/
+</code></pre>
+            <p>印出資訊</p>
+            <pre><code class='language-cmd' lang='cmd'>cp -v source_file path_to_destination/
+</code></pre>
+            <h2>find</h2>
+            <p>查詢檔案</p>
+            <p>找檔案或資料夾</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo find / -name &quot;dir-name&quot;
+sudo find / -name &quot;file-name&quot;
+sudo find / -name &quot;*.conf&quot;
+</code></pre>
+            <p>在當前目錄下尋找檔名為 README.md</p>
+            <pre><code class='language-cmd' lang='cmd'>find . -name README.md
+</code></pre>
+            <h2>source</h2>
+            <p>source 指令通常用於剛修改的初始化文件, 讓它立刻生效, 不必重開機(或登出再登入),</p>
+            <p>以下例子,</p>
+            <pre><code class='language-cmd' lang='cmd'>source demo.sh
+</code></pre>
+            <p>在當下的 shell 內去讀取, 執行 demo.sh, 而 demo.sh <strong>需要</strong>有執行權限</p>
+            <p>(執行權限代表 <code>chmod +x demo.sh</code>)</p>
+            <p>source 指令也可以簡寫為 <code>.</code></p>
+            <pre><code class='language-cmd' lang='cmd'>. demo.sh
+</code></pre>
+            <h2>sh or bash</h2>
+            <p>使用 <code>sh</code> or <code>bash</code>執行時, <strong>不需要</strong>有執行權限.</p>
+            <p>(執行權限代表 <code>chmod +x demo.sh</code>)</p>
+            <pre><code class='language-cmd' lang='cmd'>sh demo.sh
+bash demo.sh
+</code></pre>
+            <h2>./</h2>
+            <p>直接使用 <code>./</code> 執行, <strong>需要</strong>有執行權限.</p>
+            <p>(執行權限代表 <code>chmod +x demo.sh</code>)</p>
+            <p>當你執行</p>
+            <pre><code class='language-cmd' lang='cmd'>./demo.sh
+
+chmod +x demo.sh
+./demo.sh
+</code></pre>
+            <p>你會發現跳出類似訊息 <code>bash: ./demo.sh: Permission denied</code>,</p>
+            <p>修正方法如下,</p>
+            <pre><code class='language-cmd' lang='cmd'>chmod +x demo.sh
+./demo.sh
+</code></pre>
+            <h2>where</h2>
+            <p>尋找路徑，</p>
+            <p>舉例，尋找 python3 路徑</p>
+            <pre><code class='language-cmd' lang='cmd'>where python3
+which python3
+whereis python3
+</code></pre>
+            <h2>tail</h2>
+            <p>顯示檔案最後幾行內容</p>
+            <pre><code class='language-cmd' lang='cmd'>tail README.md
+</code></pre>
+            <p>一次顯示多個檔案</p>
+            <pre><code class='language-cmd' lang='cmd'>tail README_1.md README_2.md
+</code></pre>
+            <p>指定顯示檔案最後 N 行內容</p>
+            <pre><code class='language-cmd' lang='cmd'>tail -n 5 README.md
+</code></pre>
+            <pre><code class='language-cmd' lang='cmd'>tail README.md -n 5
+</code></pre>
+            <p>持續顯示更新內容，通常使用在 server 或看 log</p>
+            <pre><code class='language-cmd' lang='cmd'>tail -f README.md
+</code></pre>
+            <h2>file</h2>
+            <p>檢查檔案類型</p>
+            <pre><code class='language-cmd' lang='cmd'>file README.md
+</code></pre>
+            <h2>cat</h2>
+            <p>將檔案內容顯示在 terminal 上</p>
+            <pre><code class='language-cmd' lang='cmd'>cat README.md
+</code></pre>
+            <p>顯示行數</p>
+            <pre><code class='language-cmd' lang='cmd'>cat -n README.md
+</code></pre>
+            <p>cat 也可以寫入檔案</p>
+            <pre><code class='language-cmd' lang='cmd'>cat &lt;&lt;EOT &gt;&gt; hello_4.txt
+line 1
+line 2
+line 3
+EOT
+</code></pre>
+            <h2>clear</h2>
+            <p>clear the terminal screen ， 快捷鍵為 Ctrl+L</p>
+            <pre><code class='language-cmd' lang='cmd'>clear
+</code></pre>
+            <h2>grep</h2>
+            <pre><code class='language-cmd' lang='cmd'># 格式
+grep match_pattern file_name
+</code></pre>
+            <pre><code class='language-cmd' lang='cmd'># 格式
+grep &quot;search name&quot; README.md
+</code></pre>
+            <p>也可以一次搜尋多個檔案</p>
+            <pre><code class='language-cmd' lang='cmd'>grep &quot;name&quot; README_1.md README_2.md
+</code></pre>
+            <p>也可以使用 萬用字元 <code>*</code></p>
+            <pre><code class='language-cmd' lang='cmd'>grep &quot;print&quot; *.py
+</code></pre>
+            <p>搜尋當下目錄資料夾內容</p>
+            <pre><code class='language-cmd' lang='cmd'>grep -r &quot;search name&quot; .
+</code></pre>
+            <p>case insensitive case (不區分大小寫)</p>
+            <pre><code class='language-cmd' lang='cmd'>grep -i &quot;name&quot; README_1.md
+</code></pre>
+            <p>顯示行數</p>
+            <pre><code class='language-cmd' lang='cmd'>grep -n &quot;name&quot; README_1.md
+</code></pre>
+            <h2>mkdir</h2>
+            <p>建立資料夾</p>
+            <pre><code class='language-cmd' lang='cmd'>mkdir -p dir1/dir2
+</code></pre>
+            <p><code>-p</code> <code>--parents</code> 代表自動建立上層目錄，如果目錄已存在則不會發生錯誤。</p>
+            <h2>kill</h2>
+            <p>強制停止程式執行.</p>
+            <p>需要先查到程式的 PID, 使用方法如下,</p>
+            <pre><code class='language-cmd' lang='cmd'>kill -9 PID
+</code></pre>
+            <p><code>-9</code> 立刻強制停止程式執行</p>
+            <h2>killall</h2>
+            <p>killall 和 kill 的一個差別是可以使用程式名稱,</p>
+            <p>不需要先找到程式的 PID,</p>
+            <p>例如想要強制停止 vlc</p>
+            <pre><code class='language-cmd' lang='cmd'>killall vlc
+</code></pre>
+            <h2>history</h2>
+            <p>歷史輸入的指令</p>
+            <pre><code class='language-cmd' lang='cmd'>history
+</code></pre>
+            <pre><code class='language-cmd' lang='cmd'>history | less
+</code></pre>
+            <p><img src="https://i.imgur.com/0YKqS3Y.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>假設今天我不想打指令, 可以直接輸入 <code>!</code>+ 數字, 會自動執行該指令.</p>
+            <pre><code class='language-cmd' lang='cmd'>!1848
+</code></pre>
+            <p>再顯示一次最後輸入的指令 (建議加上 sudo)</p>
+            <pre><code class='language-cmd' lang='cmd'>!!
+</code></pre>
+            <h2>echo</h2>
+            <p>在 shell 中印出 shell 的值，</p>
+            <p>設定 EDITOR</p>
+            <pre><code class='language-cmd' lang='cmd'>export EDITOR=vim
+</code></pre>
+            <p>查看目前的 EDITOR，</p>
+            <pre><code class='language-cmd' lang='cmd'>echo $EDITOR
+</code></pre>
+            <p>查看目前的 shell，</p>
+            <pre><code class='language-cmd' lang='cmd'>echo $SHELL
+</code></pre>
+            <p>echo 也可以寫入檔案，</p>
+            <p>方法一</p>
+            <pre><code class='language-cmd' lang='cmd'>echo &quot;line 1&quot; &gt;&gt; hello_1.txt
+</code></pre>
+            <p>方法二 ( 寫入多行 )</p>
+            <pre><code class='language-cmd' lang='cmd'>echo &quot;line 1
+line 2&quot; &gt;&gt; hello_2.txt
+</code></pre>
+            <p>方法三 ( 寫入多行 )</p>
+            <pre><code class='language-cmd' lang='cmd'>{
+    echo &#39;line1;&#39;
+    echo &#39;line2;&#39;
+} &gt;&gt; hello_3.txt
+</code></pre>
+            <h2>du</h2>
+            <p><a href='https://youtu.be/JZZoJnasnHE'>Youtube Tutorial - Linux 指令教學 - du(Disk Usage)</a></p>
+            <p>du 這個指令是 Disk Usage 的縮寫,</p>
+            <p>在開始介紹 du 之前, 先來看一個例子,</p>
+            <p>使用 <code>ls -l -h</code> 觀察 debian 資料夾</p>
+            <p><img src="https://i.imgur.com/lXgxQop.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>但是如果你進到資料夾裡面, 你會發現它明明有 17GB,</p>
+            <p>可是為什麼在資料夾外層看的時候卻只有 4KB❓</p>
+            <p><img src="https://i.imgur.com/eOTKWJj.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>原因是 <code>ls -l -h</code> 不會顯示資料夾實際的大小, 只會顯示所謂的 meta information,</p>
+            <p>所以, 如果你要看實際的大小, 比較好的方法是使用接下來要介紹的 <code>du</code> 指令😄</p>
+            <p>查看 du 指令說明</p>
+            <pre><code class='language-cmd' lang='cmd'>du --help
+</code></pre>
+            <p><img src="https://i.imgur.com/IQLpqnC.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <pre><code class='language-cmd' lang='cmd'>-s, --summarize       display only a total for each argument
+                      (Equivalent to -d 0)
+
+-h, --human-readable  print sizes in human readable format (e.g., 1K 234M 2G)
+    --inodes          list inode usage information instead of block usage
+
+-c, --total           produce a grand total
+
+-d, --max-depth=N     print the total for a directory (or file, with --all)
+                      only if it is N or fewer levels below the command
+                      line argument;  --max-depth=0 is the same as --summarize
+
+
+-a, --all             write counts for all files, not just directories
+    --apparent-size   print apparent sizes, rather than disk usage; although
+                      the apparent size is usually smaller, it may be
+                      larger due to holes in (&#39;sparse&#39;) files, internal
+                      fragmentation, indirect blocks, and the like
+</code></pre>
+            <p>以下兩個指令功能是相同的</p>
+            <pre><code class='language-cmd' lang='cmd'>du -sh *
+du --summarize --human-readable *
+</code></pre>
+            <p>使用剛剛的那個例子, 在資料夾的外層就能看到實際的資料夾大小</p>
+            <p><img src="https://i.imgur.com/hHjxXDx.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>也可以搭配 <code>-d</code> 使用, 資料夾的層數, 看下面的例子你就會懂了</p>
+            <pre><code class='language-cmd' lang='cmd'>du -d 2 -h
+</code></pre>
+            <p><img src="https://i.imgur.com/NdbqvSz.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <h2>truncate</h2>
+            <p><a href='https://youtu.be/w2pwD1AOhPI'>Youtube Tutorial - Linux 指令教學 - truncate</a></p>
+            <p>Shrink or extend the size of each FILE to the specified size.</p>
+            <p>truncate 指令可以將一個檔案縮小或是增加大小.</p>
+            <p>開始介紹這個指令前, 先來看看適用的情境😄</p>
+            <p>有時候我們可能會希望把一個檔案的大小歸 0, 也就是將檔案的內容全部刪除,</p>
+            <p>但是要保留檔案, 這時候就很適合使用這個指令😏</p>
+            <p>那你可能會問我, 為什麼不直接刪除檔案再建立一個一模一樣的就好❓</p>
+            <p>原因很簡單, 在 linux 的世界中, 檔案是有權限的, 所以你還要去注意新建立</p>
+            <p>出來的檔案, 權限是否和之前的一模一樣( 否而可能會導致錯誤 ), 所以比較簡單</p>
+            <p>的方法會是使用 truncate 這個指令, 它將只會清除內容 ( 檔案大小為 0 ),</p>
+            <p>其餘的都保持原來的狀態。</p>
+            <p>查看 truncate 指令說明,</p>
+            <pre><code class='language-cmd' lang='cmd'>truncate --help
+</code></pre>
+            <p><img src="https://i.imgur.com/rOXR79N.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <pre><code class='language-cmd' lang='cmd'>Mandatory arguments to long options are mandatory for short options too.
+-c, --no-create        do not create any files
+-o, --io-blocks        treat SIZE as number of IO blocks instead of bytes
+-r, --reference=RFILE  base size on RFILE
+-s, --size=SIZE        set or adjust the file size by SIZE bytes
+    --help     display this help and exit
+    --version  output version information and exit
+
+SIZE may also be prefixed by one of the following modifying characters:
+&#39;+&#39; extend by, &#39;-&#39; reduce by, &#39;&lt;&#39; at most, &#39;&gt;&#39; at least,
+&#39;/&#39; round down to multiple of, &#39;%&#39; round up to multiple of.
+</code></pre>
+            <p>使用以下的範例來說明,</p>
+            <p>假設現在有一個 <code>demo.txt</code> 的檔案 (如下)</p>
+            <p><img src="https://i.imgur.com/nWoxmhn.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>使用 truncate 將 <code>demo.txt</code> 放大到 1M,</p>
+            <pre><code class='language-cmd' lang='cmd'>truncate -s 1M demo.txt
+</code></pre>
+            <p><img src="https://i.imgur.com/jeZ6Rkp.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>注意 <code>du -ah</code> 是顯示 apparent sizes (不是 disk usage ), 所以大小不會改變.</p>
+            <p>如果你去打開 <code>demo.txt</code>, 你會發現被塞了很多東西, 因為大小要變成 1M😄</p>
+            <p><img src="https://i.imgur.com/mgQNkNn.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>相反的, 現在使用 truncate 將 <code>demo.txt</code> 縮小到 0,</p>
+            <p><img src="https://i.imgur.com/9czKNL5.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>如果你去打開 <code>demo.txt</code>, 你會發現裡面的資料都消失了.</p>
+            <p><img src="https://i.imgur.com/vmLwz96.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>truncate 這個指令就非常適合去清除 log, 將 log 大小歸 0, 其餘保持原樣.</p>
+            <p>清空所有日誌文件</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo truncate -s 0 /var/log/**/*.log
+</code></pre>
+            <h2>不用密碼遠端登入 Linux</h2>
+            <h3>方法一</h3>
+            <p>先確認 Linux 上有 <code>.ssh</code> 資料夾，如果沒有，</p>
+            <p>請使用以下指令建立 ( 以及權限 )，</p>
+            <pre><code class='language-cmd' lang='cmd'>mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+</code></pre>
+            <p>每次遠端登入 Linux 都需要密碼很麻煩，有沒有可以透過其他的方式不要輸入密碼❓</p>
+            <p>有，先在本機電腦使用 <code>ssh-keygen</code> 產生金鑰</p>
+            <pre><code class='language-cmd' lang='cmd'>ssh-keygen
+</code></pre>
+            <p>接著你會有兩把 key ,</p>
+            <p>id_rsa.pub：公開金鑰（public key）: 要放在遠端的 Linux 伺服器上。</p>
+            <p>id_rsa：私密金鑰（private key）: 自己保護好，等同於你的 Linux 密碼。</p>
+            <p>先把自己本機 <code>id_rsa.pub</code> 傳到遠端的 Linux server 上，</p>
+            <p>接著在 Linux 上執行以下指令</p>
+            <p>( 把公開金鑰放到 <code>~/.ssh/authorized_keys</code> )</p>
+            <pre><code class='language-cmd' lang='cmd'>cat id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+</code></pre>
+            <p>讓我們來測試看看吧😄</p>
+            <p><code>ssh twtrubiks@192.168.56.101</code></p>
+            <p><img src="https://i.imgur.com/97ndrP8.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>不用輸入密碼就可以登入了👍</p>
+            <h3>方法二</h3>
+            <p>也可以透過 <code>ssh-copy-id</code> 來完成,</p>
+            <pre><code class='language-cmd' lang='cmd'>ssh-copy-id -i ~/.ssh/id_rsa.pub twtrubiks@192.168.56.101
+</code></pre>
+            <p><img src="https://i.imgur.com/eR5TIJ3.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>其實不管是方法一還是方法二, 都只是把 key 加入 <code>/home/&lt;user&gt;/.ssh</code></p>
+            <p>裡的 <code>authorized_keys</code> 而已😄</p>
+            <p><img src="https://i.imgur.com/j4BRI1J.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <h2>root 使用者登入遠端 Linux</h2>
+            <p>注意, 通常不會這樣做❗️</p>
+            <p>雖然這個方法可以比較危險，但我還是說明一下😂</p>
+            <p>先設定 root 密碼，執行以下指令</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo passwd root
+</code></pre>
+            <p><img src="https://i.imgur.com/dsSrBJX.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>再使用 <code>su -</code> 測試 root 密碼</p>
+            <p><img src="https://i.imgur.com/nmU9cgk.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>測試完成後，再執行 <code>ssh root@192.168.56.101</code></p>
+            <p><img src="https://i.imgur.com/BF4JWnO.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>你會發現一直出現 Permission denied, please try again.</p>
+            <p>這時候要到 Linux 上修改 root 的 ssh 設定，</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo vim /etc/ssh/sshd_config
+</code></pre>
+            <p>找到 PermitRootLogin without-password</p>
+            <p><img src="https://i.imgur.com/NO85xui.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>修改成 PermitRootLogin yes</p>
+            <p><img src="https://i.imgur.com/xpyfpwW.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>最後記得一定要重新啟動 sshd 讓它生效 (或是重開機)</p>
+            <pre><code class='language-cmd' lang='cmd'>systemctl restart sshd
+</code></pre>
+            <p>成功使用 root 登入了😆</p>
+            <p><img src="https://i.imgur.com/Au4wt32.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <h2>正確保護 server</h2>
+            <p>比較安全的作法通常是關閉 <code>PermitRootLogin</code> 以及 <code>PasswordAuthentication</code>,</p>
+            <p>然後只啟用 <code>PubkeyAuthentication</code> 的方式, 但這邊要注意, 一定要把你的 key 放到</p>
+            <p>server 上, 否則如果設定完不小心退出, 就很麻煩😑</p>
+            <p>( 因為不能用密碼登入, 又忘記將 key 放到 server 中 )</p>
+            <p>修改</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo vim /etc/ssh/sshd_config
+</code></pre>
+            <p>禁止 root 登入, 將 <code>PermitRootLogin</code> 設為 <code>no</code>,</p>
+            <p><img src="https://i.imgur.com/W6KBiXS.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>禁止使用 password 登入, 將 <code>PasswordAuthentication</code> 設為 <code>no</code>,</p>
+            <p><img src="https://i.imgur.com/L9WPRq5.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>允許 <code>PubkeyAuthentication</code>, 設為 <code>yes</code></p>
+            <p><img src="https://i.imgur.com/iYyaAQ8.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>補充, 還有一種是使用 PAM Authentication <code>UsePAM</code> ( AWS 就是使用這種方式 )</p>
+            <p><img src="https://i.imgur.com/g3MdnKC.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>如同說明, 如果希望只使用 PAM Authentication, 也可以把 <code>ChallengeResponseAuthentication</code> 設為 <code>no</code>.
+            </p>
+            <p>最後記得重新啟動 sshd 讓它生效 (或是重開機)</p>
+            <pre><code class='language-cmd' lang='cmd'>systemctl restart sshd
+</code></pre>
+            <h2>其他資訊</h2>
+            <p>系統訊息</p>
+            <pre><code class='language-cmd' lang='cmd'>uname -a
+</code></pre>
+            <p>查看 cpu</p>
+            <pre><code class='language-cmd' lang='cmd'>cat /proc/cpuinfo
+</code></pre>
+            <p>查看全部的 ram 大小</p>
+            <pre><code class='language-cmd' lang='cmd'>grep MemTotal /proc/meminfo
+</code></pre>
+            <p>查看可用的 ram</p>
+            <pre><code class='language-cmd' lang='cmd'>grep MemFree /proc/meminfo
+</code></pre>
+            <p>也可以使用</p>
+            <pre><code class='language-cmd' lang='cmd'>free -m
+</code></pre>
+            <p>查看硬碟空間 ( disk free space, Human Readable )</p>
+            <pre><code class='language-cmd' lang='cmd'>df -h
+</code></pre>
+            <p>所有硬碟的訊息 ( List Drives and Mounts )</p>
+            <pre><code class='language-cmd' lang='cmd'>lsblk
+</code></pre>
+            <p>顯示所有裝置設備的資訊 ,UUID</p>
+            <pre><code class='language-cmd' lang='cmd'>blkid
+</code></pre>
+            <p><img src="https://i.imgur.com/8a6V7fq.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>目前硬碟 mount 狀態 (開機自動掛載)</p>
+            <pre><code class='language-cmd' lang='cmd'>cat /etc/fstab
+</code></pre>
+            <p><img src="https://i.imgur.com/79WxI5w.png" referrerpolicy="no-referrer" alt="alt tag"></p>
+            <p>查看所有 pci，</p>
+            <pre><code class='language-cmd' lang='cmd'>lspci
+</code></pre>
+            <p>查看所有 usb，</p>
+            <pre><code class='language-cmd' lang='cmd'>lsusb
+</code></pre>
+            <p>也可以搭配 grep 搜尋，只搜尋包含 VirtualBox 的內容，</p>
+            <pre><code class='language-cmd' lang='cmd'>lsusb | grep VirtualBox
+</code></pre>
+            <p>查看 ip，</p>
+            <pre><code class='language-cmd' lang='cmd'>ip a
+</code></pre>
+            <p>external ip Address ( 對外的 ip )，<code>ifconfig.me</code> 是一個網站，</p>
+            <pre><code class='language-cmd' lang='cmd'>curl ifconfig.me
+</code></pre>
+            <p>查看電腦目前資訊，CPU RAM 等等</p>
+            <pre><code class='language-cmd' lang='cmd'>top
+</code></pre>
+            <p>推薦 <code>htop</code> ( 資訊更清楚 ), 建議參考 <a
+                    href='https://github.com/twtrubiks/linux-note/tree/master/htop-tutorial'>htop-tutorial</a> - htop
+                tutorial👍</p>
+            <p>透過 xrandr 修改螢幕的亮度，</p>
+            <p>先查看螢幕的 name，</p>
+            <pre><code class='language-cmd' lang='cmd'>xrandr | grep &quot; connected&quot; | cut -f1 -d &quot; &quot;
+</code></pre>
+            <p>設定亮度 ( 0 - 1 )，</p>
+            <pre><code class='language-cmd' lang='cmd'>xrandr --output DP-1 --brightness 0.7
+</code></pre>
+            <p>透過 systemd-analyze 查看 Linux 啟動時間</p>
+            <pre><code class='language-cmd' lang='cmd'>systemd-analyze
+</code></pre>
+            <p>查看細節</p>
+            <pre><code class='language-cmd' lang='cmd'>systemd-analyze blame
+</code></pre>
+            <h3>如何進入 tty 介面</h3>
+            <p>有時候開機時可能因為驅動沒裝, 導致卡在黑屏的畫面,</p>
+            <p>這時候就可以進入 tty 介面安裝驅動(需要的東西),</p>
+            <p>進入 tty 快捷建 <code>Ctrl+Alt+F2</code></p>
+            <p>退出 tty 快捷建 <code>Ctrl+Alt+F7</code> 或 <code>Ctrl+Alt+(F2/F3/F4)</code></p>
+            <h3>swap</h3>
+            <p>如果你的本機 ram 夠大, 可以考慮把它關掉,</p>
+            <p>(有些 distro 預設是打開的 )</p>
+            <p>關閉 swap</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo swapoff -a
+</code></pre>
+            <p>打開 swap</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo swapon -a
+</code></pre>
+            <h2>install packages</h2>
+            <p>install</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo apt-get install xxx
+</code></pre>
+            <p>如果只有 <code>.deb</code> 檔案, 可以使用以下的方式</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo apt install ./xxx.deb
+</code></pre>
+            <p>update list ( 更新 packages 的最新資訊及列表 )</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo apt-get update
+</code></pre>
+            <p>upgrade ( 更新軟體到最新的版本 )</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo apt-get upgrade
+</code></pre>
+            <p>只更新特定的軟體, 舉例 vivaldi,</p>
+            <p>先更新再安裝就是更新軟體的意思,</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo apt update &amp;&amp; sudo apt install vivaldi-stable
+</code></pre>
+            <p>remove</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo apt-get --purge autoremove xxxx
+</code></pre>
+            <p>清理不需要的 packages ( <code>.deb</code> )</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo apt autoclean
+</code></pre>
+            <p>清除不需要的依賴</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo apt autoremove
+</code></pre>
+            <h2>ppa add/remove</h2>
+            <p>add</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo apt-add-repository ppa:xxxx
+sudo apt update
+</code></pre>
+            <p>remove</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo add-apt-repository -r ppa:xxxx
+sudo apt update
+</code></pre>
+            <h2>無法進入 bios</h2>
+            <pre><code class='language-cmd' lang='cmd'>sudo vim /etc/default/grub
+</code></pre>
+            <p>你應該會看到類似的畫面</p>
+            <pre><code class='language-text' lang='text'>GRUB_DEFAULT=&quot;0&quot;
+GRUB_TIMEOUT_STYLE=&quot;hidden&quot;
+GRUB_TIMEOUT=10   &lt;&lt;&lt;&lt;&lt;&lt;
+GRUB_DISTRIBUTOR=&quot;`lsb_release -i -s 2&gt; /dev/null || echo Debian`&quot;
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash usbcore.autosuspend=-1&quot;
+GRUB_CMDLINE_LINUX=&quot;&quot;
+</code></pre>
+            <p>將 GRUB_TIMEOUT 的時間改長一點, 因為有可能是太快了, 導致來不及按😥</p>
+            <p>也請記得要再執行以下的指令更新</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo update-grub
+</code></pre>
+            <h2>remove snap</h2>
+            <p>在 ubuntu 中, 預設會幫你安裝 snap, 但有些人不太喜歡,</p>
+            <p>因為他是私人公司為維護的😄</p>
+            <p>以下附上移除 snap 指令,</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo rm -rf /var/cache/snapd/
+sudo apt autoremove --purge snapd gnome-software-plugin-snap
+rm -rf ~/snap
+</code></pre>
+            <h2>remove ubuntu 不需要的軟體</h2>
+            <p>使用 ubuntu 18.04 當範例</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo apt purge deja-dup thunderbird rhythmbox ubuntu-web-launchers whoopsie
+</code></pre>
+            <p><code>deja-dup</code> ubuntu 內建備份軟體.</p>
+            <p><code>whoopsie</code> ubuntu 錯誤報告.</p>
+            <p>如果不小心刪除到依賴 (把 settings 刪除), 可使用以下指令將它裝回來</p>
+            <pre><code class='language-cmd' lang='cmd'>sudo apt-get install gnome-control-center
+</code></pre>
+            <h2>Linux 檔案系統(結構)</h2>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/linux-file-system-structure'>Linux-File-System/Structure</a>
+            </p>
+            <h2>更多文章</h2>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/zsh-tmux-tutorual'>zsh-tmux-tutorual</a> -
+                超好用 zsh 以及 tmux。</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/zsh-powerlevel10k-tutorual'>zsh-powerlevel10k-tutorual</a>
+                - zsh 搭配 Powerlevel10k, 超漂亮 terminal。</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/vim-shortcuts'>vim-shortcuts</a> - 紀錄 vim
+                快捷鍵</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/imwheel-tutorual'>imwheel-tutorual</a> - 改善
+                linux 滑鼠滾動問題。</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/shutter-tutorual'>shutter-tutorual</a> -
+                Shutter is an excellent image capture tool.</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/systemctl-tutorial'>systemctl-tutorial</a> -
+                systemctl 命令是系統服務管理指令</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/crontab-tutorual'>crontab-tutorual</a> -
+                Linux Crontab</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/mount-disks-at-system-startup-on-ubuntu'>mount-disks-at-system-startup-on-ubuntu</a>
+            </p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/chinese-input-methods-on-ubuntu'>chinese-input-methods-on-ubuntu</a>
+                - ubuntu 如何安裝中文輸入法</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/hime-tutorial'>hime-tutorial</a> - Linux
+                中更像微軟更好用的中文輸入法 hime</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/gnome-tweaks'>gnome-tweaks</a> - Ubuntu 安裝
+                GNOME Tweak tool</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/htop-tutorial'>htop-tutorial</a> - htop
+                tutorial👍</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/neofetch-tutorial'>neofetch-tutorial</a> -
+                command-line system information tool👍</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/copyq-tutorial'>copyq-tutorial</a> - 剪貼簿👍
+            </p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/krusader-tutorial'>krusader-tutorial</a> -
+                file manager</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/fail2ban-tutorial'>fail2ban-tutorial</a> - 讓
+                server 更安全😄</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/how-to-change-login-lock-background-ubuntu'>how-to-change-login-lock-background-ubuntu</a>
+                - 修改Ubuntu 登入/鎖屏時的背景</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/grub-customizer-tutorial'>grub-customizer-tutorial</a>
+                - 安裝 grub-customizer</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/enable-ubuntu-remote-tutorial'>enable-ubuntu-remote-tutorial</a>
+                - 如何在 ubuntu 啟用遠端桌面</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/linux-nfs-server'>linux-nfs-server</a> - 如何在
+                ubuntu 啟用 NFS Server</p>
+            <h2>狀況排除</h2>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/fix_could_not_get_lock_dpkg_ubuntu'>fix_could_not_get_lock_dpkg_ubuntu</a>
+                - 修正 <code>E: Could not get lock /var/lib/dpkg/lock</code> Error</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/fix_network_manager_bug_ubuntu_18_04'>fix_network_manager_bug_ubuntu_18_04</a>
+                - 修正 ubuntu 18.04 網路連線設定遺失問題.</p>
+            <h2>其他</h2>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/linux-is-better-than-windows'>Windows -&gt;
+                Linux 優缺點</a> - Windows -&gt; Linux 優缺點</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/ubuntu-18-04-on-Lenovo-X1-Carbon-6'>ubuntu-18-04-on-Lenovo-X1-Carbon-6</a>
+            </p>
+            <p><a href='https://youtu.be/lI1EMwhW6lE'>透過 VirtualBox 安裝 Ubuntu 19.10 （以及一些個人想法）</a></p>
+            <p><a href='https://youtu.be/PMw6FPtbbaU'>VirtualBox 6.1 Linux 安裝 Guest Addition - 全屏教學</a></p>
+            <p>
+                <a href='https://github.com/twtrubiks/linux-note/tree/master/alternative-software'>alternative-software</a>
+                - windows -&gt; Linux 替代軟體</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/rclone-tutorial'>rclone-tutorial</a> -
+                rclone 是一套很棒的文件同步管理工具</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/stacer-tutorial'>stacer-tutorial</a> - Linux
+                System Optimizer and Monitoring</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/cmatrix-tutorial'>cmatrix-tutorial</a> -
+                超酷又超沒用的 cmatrix</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/sl-tutorial'>sl-tutorial</a> - sl 火車開起來</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/linux-tlp-tutorial'>linux-tlp-tutorial</a> -
+                Linux Advanced Power Management</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/speedtest-cli-tutorial'>speedtest-cli-tutorial</a>
+                - Linux speedtest-cli tutorial</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/gnirehtet-tutorial'>gnirehtet-tutorial-tutorial</a>
+                - 透過電腦讓手機上網</p>
+            <p>
+                <a href='https://github.com/twtrubiks/linux-note/tree/master/scrcpy-tutorial'>scrcpy-tutorial-tutorial</a>
+                - 使用電腦控制手機</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/linux-tlp-tutorial'>linux-tlp-tutorial</a> -
+                Linux Advanced Power Management</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/variety-tutorual'>variety-tutorual</a> -
+                variety 自動更換桌面</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/arandr-tutorual'>arandr-tutorual</a> -
+                arandr 設定多螢幕工具</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/linux-virtualbox-ssh-tutorial'>linux-virtualbox-ssh-tutorial</a>
+                - 在 Linux 中設定 VirtualBox 把玩 ssh</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/linux-virtualbox-problem'>linux-virtualbox-problem</a>
+                - 在 Linux 中設定 VirtualBox - 常見問題</p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/linux-de'>Linux 桌面環境 Desktop Environment</a>
+            </p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/linux-distro'>認識 Linux 發行版 distribution</a>
+            </p>
+            <p><a href='https://github.com/twtrubiks/linux-note/tree/master/kde-settings'>KDE setting</a></p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            </body>
+        </section>
+
+    </div>
+
+    <!-- Copyright -->
+    <div id="copyright">
+        <ul>
+            <li>&copy; L7ui</li>
+            <li>Supported by: <a href="https://github.com">Github</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.scrollex.min.js"></script>
+<script src="../assets/js/jquery.scrolly.min.js"></script>
+<script src="../assets/js/browser.min.js"></script>
+<script src="../assets/js/breakpoints.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>
